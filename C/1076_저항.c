@@ -3,50 +3,90 @@
 
 int color_value(char color[])
 {
-	if (color == "black")
-		return 0;
-	else if (color == "brown")
-		return 1;
-	else if (color == "red")
+	if (color[0] == 'b')
+	{
+		if (color[1] == 'l')
+		{
+			if (color[2] == 'a')
+				return 0;
+			else
+				return 6;
+		}
+		else
+			return 1;
+	}
+
+	else if (color[0] == 'r')
 		return 2;
-	else if (color == "orange")
+
+	else if (color[0] == 'o')
 		return 3;
-	else if (color == "yellow")
+
+	else if (color[0] == 'y')
 		return 4;
-	else if (color == "green")
-		return 5;
-	else if (color == "blue")
-		return 6;
-	else if (color == "violet")
+
+	else if (color[0] == 'g')
+	{
+		if (color[3] == 'y')
+			return 8;
+		else
+			return 5;
+	}
+
+	else if (color[0] == 'v')
 		return 7;
-	else if (color == "grey")
-		return 8;
-	else if (color == "white")
+
+	else if (color[0] == 'w')
 		return 9;
 }
 
 int color_product(char color[])
 {
-	if (color == "black")
-		return 1;
-	else if (color == "brown")
-		return 10;
-	else if (color == "red")
-		return 100;
-	else if (color == "orange")
-		return 1000;
-	else if (color == "yellow")
-		return 10000;
-	else if (color == "green")
-		return 100000;
-	else if (color == "blue")
-		return 1000000;
-	else if (color == "violet")
-		return 10000000;
-	else if (color == "grey")
-		return 100000000;
-	else if (color == "white")
-		return 1000000000;
+	if (color[0] == 'b')
+	{
+		if (color[1] == 'l')
+		{
+			if (color[2] == 'a')
+				return 0;
+			else
+				return
+		}
+		else
+		{
+
+		}
+	}
+
+	else if (color[0] == 'r')
+	{
+
+	}
+
+	else if (color[0] == 'o')
+	{
+
+	}
+
+	else if (color[0] == 'y')
+	{
+
+	}
+
+	else if (color[0] == 'g')
+	{
+		if (color[3] == 'y')
+		else
+	}
+
+	else if (color[0] == 'v')
+	{
+
+	}
+
+	else if (color[0] == 'w')
+	{
+
+	}
 }
 
 int main()
@@ -55,11 +95,11 @@ int main()
 	int sum = 0;
 
 	scanf("%s", &color);
-	sum += color_value(color) * 10;
-	printf("%d\n", sum);
+	if (color_value(color) != 0)
+		printf("%d", color_value(color));
 
 	scanf("%s", &color);
-	sum += color_value(color);
+	printf("%d", color_value(color));
 
 	scanf("%s", &color);
 	sum *= color_product(color);
