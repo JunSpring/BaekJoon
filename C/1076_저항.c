@@ -40,69 +40,35 @@ int color_value(char color[])
 		return 9;
 }
 
-int color_product(char color[])
-{
-	if (color[0] == 'b')
-	{
-		if (color[1] == 'l')
-		{
-			if (color[2] == 'a')
-				return 0;
-			else
-				return
-		}
-		else
-		{
-
-		}
-	}
-
-	else if (color[0] == 'r')
-	{
-
-	}
-
-	else if (color[0] == 'o')
-	{
-
-	}
-
-	else if (color[0] == 'y')
-	{
-
-	}
-
-	else if (color[0] == 'g')
-	{
-		if (color[3] == 'y')
-		else
-	}
-
-	else if (color[0] == 'v')
-	{
-
-	}
-
-	else if (color[0] == 'w')
-	{
-
-	}
-}
-
 int main()
 {
-	char color[10];
-	int sum = 0;
+	char color_1[10];
+	char color_2[10];
+	char color_3[10];
 
-	scanf("%s", &color);
-	if (color_value(color) != 0)
-		printf("%d", color_value(color));
+	scanf("%s", &color_1);
+	scanf("%s", &color_2);
+	scanf("%s", &color_3);
 
-	scanf("%s", &color);
-	printf("%d", color_value(color));
 
-	scanf("%s", &color);
-	sum *= color_product(color);
 
-	printf("%d", sum);
+	if (color_value(color_1) == 0 && color_value(color_2) == 0)
+		printf("0");
+
+	else if (color_value(color_1) != 0)
+	{
+		printf("%d", color_value(color_1));
+		printf("%d", color_value(color_2));
+
+		for (int i = 0; i < color_value(color_3); i++)
+			printf("0");
+	}
+
+	else
+	{
+		printf("%d", color_value(color_2));
+
+		for (int i = 0; i < color_value(color_3); i++)
+			printf("0");
+	}
 }
