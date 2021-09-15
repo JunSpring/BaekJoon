@@ -6,15 +6,21 @@ int main(void)
 {
 	int N, m, M, T, R;
 	int num = 0, exercise_num = 0, pulse, count = 0;
-	
+
 	scanf("%d %d %d %d %d", &N, &m, &M, &T, &R);
 	pulse = m;
+
+	if (m + T > M)
+	{
+		printf("-1");
+		return 0;
+	}
 
 	while (exercise_num < N)
 	{
 		if (pulse < m)
 			pulse = m;
-		
+
 		if (pulse + T <= M)
 		{
 			count = (M - pulse) / T;

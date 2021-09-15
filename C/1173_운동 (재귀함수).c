@@ -10,7 +10,7 @@ int exercise(int num, int exercise_num, int pulse)
 	if (pulse < m)
 		pulse = m;
 	else if (exercise_num < N && pulse >= m)
-		rest = exercise(num + 1, exercise_num, pulse - R); 
+		rest = exercise(num + 1, exercise_num, pulse - R);
 	if (exercise_num < N && pulse <= M - T)
 		work = exercise(num + 1, exercise_num + 1, pulse + T);
 
@@ -35,5 +35,10 @@ int exercise(int num, int exercise_num, int pulse)
 int main(void)
 {
 	scanf("%d %d %d %d %d", &N, &m, &M, &T, &R);
+	if (m + T > M)
+	{
+		printf("-1");
+		return 0;
+	}
 	printf("%d", exercise(0, 0, m));
 }
