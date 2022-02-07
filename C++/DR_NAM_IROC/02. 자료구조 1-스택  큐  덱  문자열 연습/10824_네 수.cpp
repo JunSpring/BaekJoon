@@ -15,7 +15,7 @@ int main()
 	cin >> A >> B >> C >> D;
 	st1 = A + B;
 	st2 = C + D;
-
+	
 	for (int i = 0; i < max(st1.size(), st2.size()); i++)
 	{
 		if (i == st1.size() && i == st2.size())
@@ -46,12 +46,13 @@ int main()
 				else
 					s.push(st1[st1.size() - j - 1] - '0');
 			}
+			break;
 		}
 		else
 		{
 			if (ru)
 			{
-				if (st1[st1.size() - i - 1] + st2[st2.size() - i - 1] < 10)
+				if (st1[st1.size() - i - 1] - '0' + st2[st2.size() - i - 1] - '0' < 10)
 				{
 					s.push(st1[st1.size() - i - 1] - '0' + st2[st2.size() - i - 1] - '0' + 1);
 					ru = false;
@@ -63,7 +64,7 @@ int main()
 			}
 			else
 			{
-				if (st1[st1.size() - i - 1] + st2[st2.size() - i - 1] < 10)
+				if (st1[st1.size() - i - 1] - '0' + st2[st2.size() - i - 1] - '0' < 10)
 				{
 					s.push(st1[st1.size() - i - 1] - '0' + st2[st2.size() - i - 1] - '0');
 				}
